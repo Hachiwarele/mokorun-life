@@ -54,7 +54,7 @@ const stars=[];for(const pos of [[-.31,1.63,.53],[.27,1.68,.49]]){const star=new
 // Blender plush GLB replaces the procedural mascot when the asset is uploaded.
 // Keep the existing mascot as a safe fallback if the file is missing or fails to load.
 let plushMixer=null,plushModel=null,plushLoaded=false;
-const plushPath='./mokorun-plush-v3-animated.glb';
+const plushPath='./mokorun-plush-v3-animated-optimized.glb';
 new GLTFLoader().load(plushPath,(gltf)=>{
   const model=gltf.scene;
   model.traverse(o=>{if(o.isMesh){o.castShadow=true;o.receiveShadow=true;for(const m of (Array.isArray(o.material)?o.material:[o.material])){if(m){m.roughness=.9;m.metalness=0;m.needsUpdate=true}}}});
